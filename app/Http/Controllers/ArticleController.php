@@ -12,7 +12,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        return view('articles.index', [
+            'articles' => Article::all()
+        ]);
     }
 
     /**
@@ -36,7 +38,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        //TODO : Info - Create array containing variables and their values
+        //TODO : Info - articles.show page show
+        return view('articles.show', compact('article'));
     }
 
     /**

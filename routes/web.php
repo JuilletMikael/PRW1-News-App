@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//TODO : search bip boup dd(eeeeenooorme)
 Route::resource('articles', ArticleController::class);
