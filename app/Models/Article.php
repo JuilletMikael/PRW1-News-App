@@ -15,11 +15,18 @@ class Article extends Model
      */
     protected $fillable = [
         'title',
-        'body'
+        'body',
+        'archived_at'
     ];
 
     /*
      * Guarded guard fill to be mass assign
      */
+
+    public function archive() {
+        $this->timestamps = false;
+        $this->update(['archived_at' => now()]);
+        $this->timestamps = true;
+    }
 
 }

@@ -13,7 +13,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('articles.index', [
-            'articles' => Article::all()
+            'articles' => Article::all()->whereNull('archived_at')
         ]);
     }
 
@@ -71,7 +71,8 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        $article->delete();
+        // create new method on the class
+        $article->archive();
         return redirect()->route('articles.index');
     }
 }
