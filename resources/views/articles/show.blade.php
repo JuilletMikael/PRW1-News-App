@@ -8,3 +8,5 @@ Created date : {{$article->created_at}}
     @method('DELETE') <!--TODO : info - Define the method-->
     <input type="submit" value="DELETE">
 </form>
+
+<a href="{{ route('articles.edit', $article) }}">modifier</a>
