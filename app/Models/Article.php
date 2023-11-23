@@ -29,4 +29,9 @@ class Article extends Model
         $this->timestamps = true;
     }
 
+    //static cause we need to acces to ann object
+    public static function unarchived() {
+        return self::whereNull('archived_at')->get();
+    }
+
 }

@@ -13,7 +13,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('articles.index', [
-            'articles' => Article::all()->whereNull('archived_at')
+            'articles' => Article::unarchived()
         ]);
     }
 
