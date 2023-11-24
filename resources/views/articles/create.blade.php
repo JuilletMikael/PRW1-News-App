@@ -1,3 +1,5 @@
+@extends('layout')
+@section('content')
 <form method="POST" action="{{ route('articles.store') }}">
     @csrf <!--TODO : info minute 11 https://laracasts.com/series/laravel-8-from-scratch/episodes/45 -->
 
@@ -9,3 +11,4 @@
     <br>
     <input type="submit" value="VALIDATE">
 </form>
+@endsection

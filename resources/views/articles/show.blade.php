@@ -1,3 +1,5 @@
+@extends('layout')
+@section('content')
 <h1>{{$article->title}}</h1>
 Created date : {{$article->created_at}}
 <p>{{$article->body}}</p>
@@ -10,3 +12,4 @@ Created date : {{$article->created_at}}
 </form>
 
 <a href="{{ route('articles.edit', $article) }}">modifier</a>
+@endsection

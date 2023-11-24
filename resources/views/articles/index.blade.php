@@ -1,5 +1,5 @@
-<!-- TODO : Add a layout -->
-
+@extends('layout')
+@section('content')
 <h1>Articles</h1>
 <ul>
     @foreach ($articles as $article)
@@ -8,3 +8,4 @@
 </ul>
 
 <a href="{{ route('articles.create') }}">CREATE NEW ARTICLE</a>
+@endsection
