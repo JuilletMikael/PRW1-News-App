@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//TODO : search bip boup dd(eeeeenooorme)
+Route::view('/', 'home');
+//Route::view('/articles/archived', [ArticleController::class, 'indexArchived'] );
 Route::resource('articles', ArticleController::class);

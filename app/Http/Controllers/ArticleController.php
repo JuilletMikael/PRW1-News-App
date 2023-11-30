@@ -9,11 +9,17 @@ class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * Do not use where controller
      */
-    public function index()
+    public static function index(Request $request)
     {
+        $articles = new Article();
+        //$articles = Article::filter($request)->unarchived($request)->get();
+        $articles = $request->has('archived') ? $articles->archived() : $articles->unarchived($request);
+        if ($request->has('search'))  $articles->where('title', 'like', '%'.$request->get('search').'%');
+
         return view('articles.index', [
-            'articles' => Article::unarchived()
+            'articles' => $articles->get()
         ]);
     }
 
