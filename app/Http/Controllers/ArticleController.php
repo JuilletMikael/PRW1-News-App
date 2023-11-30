@@ -9,7 +9,7 @@ class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * Do not use where controller
+     * Do not use where controller in the controller we need to have the intention and not the comportment
      */
     public static function index(Request $request)
     {
