@@ -28,7 +28,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create', ['articles' => new Article()]);
+        return view('articles.create', ['article' => new Article()]);
     }
 
     /**
