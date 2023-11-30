@@ -46,8 +46,8 @@ class Article extends Model
         $query->whereNotNull('archived_at');
     }
 
-    public function scopeFilter(Builder $query) :void {
-        $query->where('title', 'like', '%oui%');
+    public function scopeSearchTitle(Builder $query, $search) :void {
+        $query->where('title', 'like', "%$search%");
     }
 
 }
