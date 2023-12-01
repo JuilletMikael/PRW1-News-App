@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,7 @@ Route::view('/', 'home');
 Route::resource('articles', ArticleController::class);
 //allow to use only the store method, nest liked to articles
 Route::resource('articles.comments', CommentController::class)->only('store');
+Route::resource('articles.category', CategoryController::class)->only('store');
+// TODO : adding all articles by cathegories
 
 //TODO : add types of articles, author
