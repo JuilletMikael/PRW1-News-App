@@ -24,6 +24,7 @@ Created date : {{$article->created_at}}
 </form>
 
 <h3>has commented</h3>
+<!-- TODO : is it ok to do thigs like that ? -->
 @foreach($article->comment()->get() as $comment)
     <div>
         <p>
