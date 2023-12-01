@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -53,7 +54,10 @@ class ArticleController extends Controller
     {
         //TODO : Info - Create array containing variables and their values
         //TODO : Info - articles.show page show
-        return view('articles.show', compact('article'));
+
+        $comments = $article->comment()->get();
+
+        return view('articles.show', compact('article', 'comments'));
     }
 
     /**

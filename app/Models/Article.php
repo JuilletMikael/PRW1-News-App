@@ -50,4 +50,8 @@ class Article extends Model
         $query->where('title', 'like', "%$search%");
     }
 
+    public function comment() {
+        return $this->hasMany(Comment::class,'article_id');
+    }
+
 }
