@@ -12,14 +12,9 @@ Created date : {{$article->created_at}}
 
 <a href="{{ route('articles.edit', $article) }}">modifier</a>
 
-@foreach($comments as $comment)
-    <div>
-        <h3>
-            {{$comment->comment}}
-        </h3>
-    </div>
-@endforeach
+<hr>
 
+<h3>Comments</h3>
 <form method="POST" action="{{ route('articles.comments.store', $article) }}">
     @csrf <!--TODO : info minute 11 https://laracasts.com/series/laravel-8-from-scratch/episodes/45 -->
     <label for="comment">comment</label><br>
@@ -28,6 +23,13 @@ Created date : {{$article->created_at}}
     <input type="submit" value="Submit">
 </form>
 
-
+<h3>has commented</h3>
+@foreach($article->comment()->get() as $comment)
+    <div>
+        <p>
+            {{$comment->comment}}
+        </p>
+    </div>
+@endforeach
 
 @endsection

@@ -18,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home');
 //Route::view('/articles/archived', [ArticleController::class, 'indexArchived'] );
 Route::resource('articles', ArticleController::class);
-Route::resource('articles.comments', CommentController::class);
+//allow to use only the store method, nest liked to articles
+Route::resource('articles.comments', CommentController::class)->only('store');
+
+//TODO : add types of articles, author

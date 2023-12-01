@@ -55,9 +55,7 @@ class ArticleController extends Controller
         //TODO : Info - Create array containing variables and their values
         //TODO : Info - articles.show page show
 
-        $comments = $article->comment()->get();
-
-        return view('articles.show', compact('article', 'comments'));
+        return view('articles.show', compact('article'));
     }
 
     /**
