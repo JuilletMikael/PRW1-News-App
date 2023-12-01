@@ -20,7 +20,7 @@ Created date : {{$article->created_at}}
     </div>
 @endforeach
 
-<form method="POST" action="{{ route('comments.store') }}">
+<form method="POST" action="{{ route('articles.comments.store', $article) }}">
     @csrf <!--TODO : info minute 11 https://laracasts.com/series/laravel-8-from-scratch/episodes/45 -->
     <label for="comment">comment</label><br>
     <input type="text" id="comment" name="comment" required>

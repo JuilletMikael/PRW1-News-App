@@ -21,7 +21,6 @@ class CommentController extends Controller
         $validated['article_id'] = $article->id;
         Comment::create($validated);
 
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.show', $article);
     }
-
 }
