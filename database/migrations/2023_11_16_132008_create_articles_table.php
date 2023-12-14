@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('body');
-            $table->foreignId('categories_id');
+            $table->foreignId('category_id');
             $table->dateTime('published_at')->nullable();
             $table->timestamps();
         });

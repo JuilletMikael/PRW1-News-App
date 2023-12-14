@@ -18,7 +18,8 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
-        'archived_at'
+        'archived_at',
+        'category_id'
     ];
 
     /*
