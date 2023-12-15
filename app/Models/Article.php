@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -51,7 +52,8 @@ class Article extends Model
         $query->where('title', 'like', "%$search%");
     }
 
-    public function comment() {
+    public function comments() :HasMany
+    {
         return $this->hasMany(Comment::class,'article_id');
     }
 

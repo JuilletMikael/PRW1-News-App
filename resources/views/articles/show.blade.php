@@ -25,7 +25,7 @@ Created date : {{$article->created_at}}
 
 <h3>has commented</h3>
 <!-- TODO : is it ok to do thigs like that ? -->
-@foreach($article->comment()->get() as $comment)
+@foreach($article->comments()->get() as $comment)
     <div>
         <p>
             {{$comment->comment}}
