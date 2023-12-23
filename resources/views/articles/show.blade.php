@@ -10,6 +10,14 @@ Created date : {{$article->created_at}}
     <input class="btn btn-primary" type="submit" value="DELETE">
 </form>
 
+@foreach($article->categories()->get() as $category)
+    <div>
+        <p class="text-primary">
+            {{$category->name}}
+        </p>
+    </div>
+@endforeach
+
 <a href="{{ route('articles.edit', $article) }}">modifier</a>
 
 <hr>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use App\Models\Category;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create', ['article' => new Article()]);
+        return view('articles.create', ['article' => new Article(), 'categories' => Category::all()]);
     }
 
     /**
@@ -38,8 +39,9 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        Article::create($request->all());
-
+        //Article::create($request->all());
+        $article = Article::create(\Illuminate\Support\Arr::except($request->all(), 'categories'));
+        $article->categories()->attach($request['categories']);
         return redirect()->route('articles.index');
     }
 
@@ -50,7 +52,6 @@ class ArticleController extends Controller
     {
         //TODO : Info - Create array containing variables and their values
         //TODO : Info - articles.show page show
-
         return view('articles.show', compact('article'));
     }
 
@@ -59,7 +60,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('articles.edit', compact('article'));
+        $categories = Category::all();
+        return view('articles.edit', compact('article', 'categories'));
     }
 
     /**
@@ -68,7 +70,7 @@ class ArticleController extends Controller
     public function update(ArticleRequest $request, Article $article)
     {
         $article->update($request->all());
-
+        $article->categories()->sync($request['categories']);
         return redirect()->route('articles.index');
     }
 

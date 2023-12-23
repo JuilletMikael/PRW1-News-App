@@ -24,7 +24,7 @@ class ArticleRequest extends FormRequest
         return [
                 'title' => 'required',
                 'body' => 'required',
-                'category_id' => 'required'
+                'categories' => 'required'
         ];
     }
 }

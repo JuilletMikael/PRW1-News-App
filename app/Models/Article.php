@@ -19,8 +19,7 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
-        'archived_at',
-        'category_id'
+        'archived_at'
     ];
 
     /*
@@ -55,6 +54,11 @@ class Article extends Model
     public function comments() :HasMany
     {
         return $this->hasMany(Comment::class,'article_id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
 
 }
