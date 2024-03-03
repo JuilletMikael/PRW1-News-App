@@ -39,21 +39,42 @@ update it with your environment's values.
 
 ## Directory structure
 ```shell
-├───public                  //Web files (routes)
-│   ├───documents
-│   └───projects
-│       ├───Kartthemall
-│       ├───portfolio
-│       └───stellarmap
-└───src                      // externals files
-    └───app
-        ├───about
-        ├───contact
-        └───projects
-            ├───kartthemall
-            ├───meteo
-            ├───portfolio
-            └───stellarmap
+C:.
+├───app
+│   ├───Console
+│   ├───Exceptions
+│   ├───Http
+│   │   ├───Controllers
+│   │   ├───Middleware
+│   │   └───Requests
+│   ├───Models
+│   └───Providers
+├───bootstrap
+│   └───cache
+├───config
+├───database
+│   ├───migrations
+│   └───seeders
+├───public
+├───resources
+│   ├───css
+│   ├───js
+│   └───views
+│       └───articles
+├───routes
+├───storage
+│   ├───app
+│   │   └───public
+│   ├───framework
+│   │   ├───cache
+│   │   │   └───data
+│   │   ├───sessions
+│   │   ├───testing
+│   │   └───views
+│   └───logs
+└───tests
+    ├───Feature
+    └───Unit
 ```
 
 ## Collaborate
